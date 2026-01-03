@@ -1,0 +1,28 @@
+;;; vec.sys --- VEC Sytem Definitions
+(defsys :vec/aa
+ :description "polygon rasterizer" 
+ :components 
+ ((:file "aa")
+  (:file "aa-bin"))
+ :provide
+ ((:sys :vec/aa/misc
+   :components
+   ((:file "aa-misc")))))
+ 
+(defsys :vec/paths
+  :description "vector path manipulation"
+  :components
+  ((:file "pkg")
+   (:file "paths")
+   (:file "annotation"))
+ :provide
+ ((:sys :vec/paths/ttf
+   :description "TTF vector path manipulation"
+   :require (:vec/paths :dat)
+   :components
+   ((:file "ttf")))))
+
+(defsys :vec
+ :description "vector path manipulation"
+ :require (:vec/aa :vec/paths)
+ :components ((:file "vec")))
