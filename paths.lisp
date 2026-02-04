@@ -1552,6 +1552,7 @@ reached."
                      (when xi
                        (path-extend current (make-straight-line) (make-point xi yi))))))))
       (multiple-value-bind (i1 k1 e1) (next)
+        (declare (ignorable i1))
         (let ((first-knot k1))
           (when k1
             (cond
