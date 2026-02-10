@@ -17,7 +17,7 @@
    (:file "annotation"))
  :provide
  ((:sys :vec/paths/ttf
-   :description "TTF vector path manipulation"
+   ;; :description "TTF vector path manipulation"
    :require (:vec/paths :dat)
    :components
    ((:file "ttf")))))
